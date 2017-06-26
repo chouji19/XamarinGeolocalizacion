@@ -47,8 +47,10 @@ namespace XamarinGeolocalizacion
             var extGeo = FindViewById<TextView>(Resource.Id.textViewExtGeo);
             var idiomas = FindViewById<TextView>(Resource.Id.textViewIdioma);
             var moneda = FindViewById<TextView>(Resource.Id.textViewMoneda);
+            var data = await georef.ObtenerDatos(position.Latitude, position.Longitude);
             try
             {
+                
                 if (data != null)
                 {
                     pais.Text = data.Nombre;
